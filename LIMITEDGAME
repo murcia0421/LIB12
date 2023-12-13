@@ -1,0 +1,64 @@
+/*public void start() {
+    initializeNormalTokens();
+    initializeSpecialTokens();
+}
+
+private void initializeNormalTokens() {
+    int numSpecials = (numTokens) * especialPercentageTokens / 100;
+    int numNormal = numTokens - numSpecials;
+
+    playerOne.setQuantityTypeOfToken("NormalToken", numNormal);
+    playerTwo.setQuantityTypeOfToken("NormalToken", numNormal);
+}
+
+private void initializeSpecialTokens() {
+    Random random = new Random();
+    int numSpecials = (numTokens) * especialPercentageTokens / 100;
+
+    for (Class typeOfToken : Token.getTokenSubtypes()) {
+        String tokenName = typeOfToken.getSimpleName();
+        if (!tokenName.equals("NormalToken") && numSpecials != 0) {
+            int num = random.nextInt(numSpecials);
+            playerOne.setQuantityTypeOfToken(tokenName, num);
+            playerTwo.setQuantityTypeOfToken(tokenName, num);
+            numSpecials -= num;
+        }
+    }
+
+    distributeRemainingSpecialTokens(numSpecials);
+}
+
+private void distributeRemainingSpecialTokens(int remainingSpecials) {
+    if (remainingSpecials != 0) {
+        for (Class typeOfToken : Token.getTokenSubtypes()) {
+            String tokenName = typeOfToken.getSimpleName();
+            if (!tokenName.equals("NormalToken")) {
+                playerOne.setQuantityTypeOfToken(tokenName, remainingSpecials);
+                playerTwo.setQuantityTypeOfToken(tokenName, remainingSpecials);
+                break;
+            }
+        }
+    }
+}
+
+Claro, analicemos más a fondo la refactorización propuesta del método start() en la clase LimitedGame.
+
+División de Responsabilidades:
+
+Antes de la refactorización, el método start() tenía la responsabilidad de distribuir tanto los tokens normales como los especiales, lo que hacía que el código fuera más extenso y difícil de entender.
+
+Después de la refactorización, se crearon métodos más pequeños y específicos (initializeNormalTokens(), initializeSpecialTokens(), y distributeRemainingSpecialTokens()) para dividir las responsabilidades. Ahora, cada método realiza una tarea específica, facilitando la comprensión y mantenimiento del código.
+
+Mejora de la Claridad:
+
+El código refactorizado elimina la necesidad de repetir lógica, ya que la distribución de tokens especiales se realiza en un solo lugar (initializeSpecialTokens()).
+
+Se utiliza un método separado (distributeRemainingSpecialTokens()) para manejar la distribución de tokens especiales restantes, lo que mejora la modularidad y permite un mejor manejo de los casos límite.
+
+Facilitar la Modificación:
+
+La refactorización facilita futuras modificaciones o extensiones relacionadas con la inicialización de tokens. Si se deben realizar cambios, los desarrolladores pueden centrarse en un área específica sin afectar otras partes del código.
+Legibilidad:
+
+El código refactorizado es más legible debido a la estructura más clara y a la nomenclatura de los métodos, lo que ayuda a comprender rápidamente el propósito de cada sección del código.
+En resumen, la refactorización busca mejorar la legibilidad, modularidad y mantenimiento del código al dividir responsabilidades y reducir la complejidad de las funciones. */
