@@ -1,0 +1,18 @@
+package domain;
+
+import java.awt.Color;
+
+public class SimpleToken extends Token {
+
+    public SimpleToken(Color color, int row, int column) {
+        super(color, row, column);
+    }
+
+    @Override
+    public void act() {
+        // Implementa la lógica específica para la ficha simple
+        // Puedes agregar acciones adicionales o personalizadas aquí
+        System.out.println("Acción de la ficha simple");
+        AlertPlay.dettach(this);
+    }
+}
