@@ -1,0 +1,25 @@
+package domain;
+
+import java.util.Random;
+
+public class SimpleGame extends Game {
+
+    public SimpleGame(int size) {
+        super(size);
+    }
+
+    @Override
+    public void start() {
+        // Implementa la lógica específica para el juego simple al inicio
+        // Puedes establecer reglas adicionales o personalizadas aquí
+        System.out.println("Inicio del juego simple");
+    }
+
+    @Override
+    public void play(String token, int row, int column) {
+        // Implementa la lógica específica para el juego simple al realizar un movimiento
+        // Puedes agregar verificaciones o acciones adicionales aquí
+        System.out.println("Movimiento en el juego simple");
+        super.play(token, row, column);
+    }
+}
