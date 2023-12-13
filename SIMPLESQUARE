@@ -1,0 +1,16 @@
+package domain;
+
+public class SimpleSquare extends Square {
+
+    public SimpleSquare(Board board, int row, int column) {
+        super(board, row, column);
+    }
+
+    @Override
+    public void act() {
+        // Implementa la lógica específica para el cuadrado simple al activarse
+        // Puedes agregar acciones adicionales o personalizadas aquí
+        System.out.println("Acción del cuadrado simple");
+        AlertPlay.dettach(this);
+    }
+}
